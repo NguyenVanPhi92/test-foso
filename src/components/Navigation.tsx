@@ -7,10 +7,10 @@ interface PaginationProps {
 const Pagination: React.FC<PaginationProps> = ({ totalPages, currentPage, onPageChange }) => {
   const generatePages = () => {
     let pages = []
-    if (totalPages <= 7) {
-      pages = Array.from({ length: totalPages }, (_, i) => i + 1)
+    if ((totalPages ?? 0) <= 7) {
+      pages = Array.from({ length: totalPages ?? 0 }, (_, i) => i + 1)
     } else {
-      pages = [1, 2, 3, '...', totalPages - 2, totalPages - 1, totalPages]
+      pages = [1, 2, 3, '...', (totalPages ?? 0) - 2, (totalPages ?? 0) - 1, totalPages ?? 0]
     }
     return pages
   }
@@ -22,7 +22,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, currentPage, onPage
         className={`flex items-center gap-1 cursor-pointer ${
           currentPage === 1 ? 'text-gray-300 cursor-not-allowed' : 'hover:text-gray-800'
         }`}
-        onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
+        onClick={() => (currentPage ?? 1) > 1 && onPageChange && onPageChange((currentPage ?? 1) - 1)}
         disabled={currentPage === 1}
       >
         ← Trang trước
@@ -41,7 +41,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, currentPage, onPage
               className={`px-3 py-1 rounded-md cursor-pointer ${
                 currentPage === page ? 'bg-green-100 font-bold text-black' : 'hover:text-gray-800'
               }`}
-              onClick={() => onPageChange(Number(page))}
+              onClick={() => onPageChange && onPageChange(Number(page))}
             >
               {page}
             </button>
@@ -54,7 +54,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, currentPage, onPage
         className={`flex items-center gap-1 cursor-pointer ${
           currentPage === totalPages ? 'text-gray-300 cursor-not-allowed' : 'hover:text-gray-800'
         }`}
-        onClick={() => currentPage < totalPages && onPageChange(currentPage + 1)}
+        onClick={() => (currentPage ?? 1) < (totalPages ?? 0) && onPageChange && onPageChange((currentPage ?? 1) + 1)}
         disabled={currentPage === totalPages}
       >
         Trang kế tiếp →

@@ -10,7 +10,7 @@ interface BlogCardProps {
   imageUrl?: string
 }
 
-const BlogCard: React.FC<BlogCardProps> = ({ title, date, readingTime, category, imageUrl }) => {
+const BlogCard: React.FC<BlogCardProps> = () => {
   return (
     <div className=' rounded-2xl'>
       {/* Hình ảnh */}

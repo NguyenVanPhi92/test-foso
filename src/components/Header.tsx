@@ -48,7 +48,10 @@ export default function Header() {
       <div className='flex items-center space-x-4'>
         {/* Language Selector */}
         <div className='relative'>
-          <button className='flex items-center space-x-2 px-4 py-1 bg-gray-100 rounded-full'>
+          <button
+            className='flex items-center space-x-2 px-4 py-1 bg-gray-100 rounded-full'
+            onClick={() => setLanguage('eg')}
+          >
             <Image src={vn} alt='Logo' width={100} height={100} className='w-4 h-4' />
             <span>{language}</span>
             <ChevronDown className='w-4 h-4' />
