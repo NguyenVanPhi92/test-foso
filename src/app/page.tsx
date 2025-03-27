@@ -13,6 +13,7 @@ import Banner from '../assets/banner.png'
 import robot from '../assets/chatbox.png'
 import laptop from '../assets/laptop.png'
 import mrp from '../assets/mrp.png'
+import Link from 'next/link'
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -45,7 +46,9 @@ export default function Home() {
 
           <div className='grid grid-cols-2 gap-6'>
             {Array.from({ length: 6 }, (v, i) => (
-              <BlogCard key={i} />
+              <Link href={'/detail'} key={i}>
+                <BlogCard key={i} />
+              </Link>
             ))}
           </div>
         </div>
