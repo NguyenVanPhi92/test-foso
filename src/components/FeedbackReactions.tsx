@@ -31,7 +31,7 @@ export default function FeedbackReactions() {
   }
 
   return (
-    <div className='bg-gray-50 p-6 rounded-xl shadow-md w-full max-w-2xl mx-auto'>
+    <div className='bg-gray-50 p-6 rounded-xl shadow-md w-full my-6'>
       <h3 className='text-lg font-semibold text-center'>Bạn thấy bài viết như thế nào?</h3>
       <p className='text-gray-600 text-center mb-4'>{Object.values(counts).reduce((a, b) => a + b, 0)} phản hồi</p>
       <div className='flex justify-center space-x-4'>

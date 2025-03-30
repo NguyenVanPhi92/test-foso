@@ -18,7 +18,7 @@ import Link from 'next/link'
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(1)
   return (
-    <div className='p-10'>
+    <div className='p-10 '>
       <div className='px-32'>
         <Header />
       </div>

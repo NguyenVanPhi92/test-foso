@@ -1,13 +1,10 @@
 'use client'
-import React, { useState } from 'react'
-import { ChevronDown, ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, ChevronDown } from 'lucide-react'
+import Image from 'next/image'
 import logo from '../assets/logo.png'
 import vn from '../assets/vn.png'
-import Image from 'next/image'
 
 export default function Header() {
-  const [language, setLanguage] = useState('VI')
-
   return (
     <header className='bg-white shadow-xl rounded-full py-4 flex justify-center gap-x-18 items-center mx-auto mt-4'>
       {/* Logo */}
@@ -48,12 +45,9 @@ export default function Header() {
       <div className='flex items-center space-x-4'>
         {/* Language Selector */}
         <div className='relative'>
-          <button
-            className='flex items-center space-x-2 px-4 py-1 bg-gray-100 rounded-full'
-            onClick={() => setLanguage('eg')}
-          >
+          <button className='flex cursor-pointer items-center space-x-2 px-4 py-1 bg-gray-100 rounded-full'>
             <Image src={vn} alt='Logo' width={100} height={100} className='w-4 h-4' />
-            <span>{language}</span>
+            <span>VI</span>
             <ChevronDown className='w-4 h-4' />
           </button>
         </div>

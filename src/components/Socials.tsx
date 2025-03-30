@@ -1,12 +1,16 @@
-import Image from 'next/image'
+import Facebook from '../assets/icons/Facebook'
+import LinkendIn from '../assets/icons/LinkendIn'
+import Reddit from '../assets/icons/Reddit'
+import X from '../assets/icons/X'
+import Zalo from '../assets/icons/Zalo'
 
 const SocialShare = () => {
   const socialLinks = [
-    { name: 'Zalo', icon: '../assets/icons/Zalo.svg', link: '#' },
-    { name: 'Facebook', icon: '../assets/icons/Facebook.svg', link: '#' },
-    { name: 'Twitter (X)', icon: '../assets/icons/X.svg', link: '#' },
-    { name: 'LinkedIn', icon: '../assets/icons/LinkedIn.svg', link: '#' },
-    { name: 'Redit', icon: '../assets/icons/Redit.svg', link: '#' }
+    { name: 'Zalo', icon: <Zalo />, link: '#' },
+    { name: 'Facebook', icon: <Facebook />, link: '#' },
+    { name: 'Twitter (X)', icon: <X />, link: '#' },
+    { name: 'LinkedIn', icon: <LinkendIn />, link: '#' },
+    { name: 'Reddit', icon: <Reddit />, link: '#' }
   ]
 
   return (
@@ -18,7 +22,7 @@ const SocialShare = () => {
           href={item.link}
           className='w-12 h-12 flex items-center justify-center border-2 border-green-500 rounded-xl hover:bg-green-100 transition'
         >
-          <Image src={item.icon} alt={item.name} className='w-6 h-6' width={100} height={100} />
+          {item.icon}
         </a>
       ))}
     </div>
